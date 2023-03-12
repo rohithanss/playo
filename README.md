@@ -255,4 +255,29 @@ Delployed Link: https://playo.onrender.com/
         }
         
 ### /events/myevents/acceptplayer/:eventId
+
+-  user(event organizer) can accept the join requst of the players who applied to join the event
+
+> **headers.authorization*** : `Bearer ${token}`
+
+> **headers.body***: `{playerId : (userId of the player)}`
+
+> **:eventId***: `in endpoint's params is the Id of event`
+
+> return (if request is successful) =>
+ 
+        {msg:"Player's request accepted Successfully"}
+        
 ### /events/myevents/rejectplayer/:eventId
+-  user(event organizer) can reject the join requst of the players who applied to join the event
+
+> **headers.authorization*** : `Bearer ${token}`
+
+> **headers.body***: `{playerId : (userId of the player)}`
+
+> **:eventId***: `in endpoint's params is the Id of event`
+
+> return (if request is successful) =>
+ 
+        {msg:"Player's request rejected Successfully"}
+  
