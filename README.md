@@ -33,7 +33,7 @@ Delployed Link: https://playo.onrender.com/
 - /events/myevents/acceptplayer/:eventId
 - /events/myevents/rejectplayer/:eventId
 
-### /user/register
+### POST: /user/register
 
 - User with the same email can not register
 
@@ -43,7 +43,7 @@ Delployed Link: https://playo.onrender.com/
 
         {status:"success", msg:"regisration successful"} 
 
-### /user/login
+### POST: /user/login
 
 > **headers.body***: `{email, password}`
 
@@ -52,7 +52,7 @@ Delployed Link: https://playo.onrender.com/
         {status:"success", token:(JWT_Token)"} 
  
 
-### /events/
+### GET: /events/
 
 > **headers.authorization*** : `Bearer ${token}`
 
@@ -73,7 +73,7 @@ Delployed Link: https://playo.onrender.com/
         }
         
 
-### /events/details/:eventId
+### GET: /events/details/:eventId
 
 > **headers.authorization*** : `Bearer ${token}`
 
@@ -102,7 +102,7 @@ Delployed Link: https://playo.onrender.com/
             ]
         }
 
-### /events/joinevent/:eventId
+### POST: /events/joinevent/:eventId
 
 - User can apply to join an event
 
@@ -118,7 +118,7 @@ Delployed Link: https://playo.onrender.com/
             "msg": "Player's join request accepted successfully"
         }
         
-### /events/canceljoinrequest/:eventId
+### PATCH: /events/canceljoinrequest/:eventId
 
 - User can cancel the join request for an event
 
@@ -132,7 +132,7 @@ Delployed Link: https://playo.onrender.com/
             "msg": "Player's join request cancelled successfully"
         }
         
-### /events/mybookings
+### GET: /events/mybookings
 
 - User can get the information of the all events, user applied for, with the joining status
 
@@ -157,7 +157,7 @@ Delployed Link: https://playo.onrender.com/
                 }]
         }
         
-### /events/create
+### POST: /events/create
 
 - User can create his own events, and other players can apply to join the event
 
@@ -180,7 +180,7 @@ Delployed Link: https://playo.onrender.com/
                 "msg": "event created successfully"
         }
         
-### /events/myevents
+### GET: /events/myevents
 
 - User can get the information of the all events, user created.
 
@@ -220,7 +220,7 @@ Delployed Link: https://playo.onrender.com/
                 ]
         }
         
-### /events/myevents/details/:eventId
+### GET: /events/myevents/details/:eventId
 
 -  user can get the info of the all players who have applied to the event, user created
 
@@ -254,7 +254,7 @@ Delployed Link: https://playo.onrender.com/
                 }
         }
         
-### /events/myevents/acceptplayer/:eventId
+### PATCH: /events/myevents/acceptplayer/:eventId
 
 -  user(event organizer) can accept the join requst of the players who applied to join the event
 
@@ -268,7 +268,7 @@ Delployed Link: https://playo.onrender.com/
  
         {msg:"Player's request accepted Successfully"}
         
-### /events/myevents/rejectplayer/:eventId
+### PATCH: /events/myevents/rejectplayer/:eventId
 -  user(event organizer) can reject the join requst of the players who applied to join the event
 
 > **headers.authorization*** : `Bearer ${token}`
